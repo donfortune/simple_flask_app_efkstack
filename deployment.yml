@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: logging-app-deployment
+  labels:
+    app: logging-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: logging-app
+  template:
+    metadata:
+      labels:
+        app: logging-app
+    spec:
+      containers:
+      - name: logging-app
+        image: donfortune1/logging_app:1.0 
+        ports:
+        - containerPort: 80
