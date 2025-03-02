@@ -1,6 +1,4 @@
-
-
-FROM python:3.10.11
+FROM python:3.10.11 //base image
 WORKDIR /app
 COPY . /app
 RUN pip3 install -r requirements.txt
